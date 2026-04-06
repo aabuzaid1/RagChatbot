@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+  /* Background Colors - Bright & Clean matching Ruwwad */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+
+  /* Ruwwad Brand Colors - Logo Cyan matching the image */
+  --ruwwad-deep: #008ebf;
+  --ruwwad-primary: #00AEEF;
+  --ruwwad-bright: #33bfff;
+  --ruwwad-light: #66cfff;
+  --ruwwad-pale: #e5f7fd;
+
+  /* Accent Colors */
+  --accent-primary: #00AEEF;
+  --accent-secondary: #009BD6;
+  --accent-tertiary: #33bfff;
+  --accent-gradient: linear-gradient(135deg, #00AEEF 0%, #009BD6 100%);
+  --accent-gradient-soft: linear-gradient(180deg, rgba(0, 174, 239, 0.08) 0%, rgba(248, 250, 252, 0) 100%);
+
+  /* Text Colors - High Contrast Light Mode */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Border & Glow */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --glow-color: rgba(0, 174, 239, 0.15);
+  --glow-bright: rgba(0, 174, 239, 0.3);
+
+  /* Organization Specific */
+  --org-name: "مؤسسة رواد التنمية";
+  --org-color: #00AEEF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Custom Selection */
+::selection {
+  background: rgba(0, 174, 239, 0.2);
+  color: var(--text-primary);
+}
+
+/* Scrollbar Styling - Ruwwad Cyan */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Logo Animation - Gentle Professional Pulse */
+.logo-pulse {
+  animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(0, 174, 239, 0.2));
+  }
+  50% {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.4));
+  }
+}
+
+/* Brand Header Gradient */
+.brand-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Ruwwad Theme Classes */
+.ruwwad-glow {
+  box-shadow: 0 0 30px var(--glow-color);
+}
+
+.ruwwad-border {
+  border-color: rgba(0, 174, 239, 0.2);
+}
+
+.ruwwad-text-gradient {
+  background: linear-gradient(135deg, #00AEEF 0%, #009BD6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Chat Message Styling */
+.message-user {
+  background: var(--accent-gradient);
+  box-shadow: 0 4px 15px rgba(0, 174, 239, 0.2);
+  color: #ffffff;
+}
+
+.message-assistant {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Input Field Focus */
+.input-focus:focus-within {
+  border-color: var(--ruwwad-primary) !important;
+  box-shadow: 0 0 0 2px var(--glow-color) !important;
+}
+
+/* Button Hover Effects */
+.btn-ruwwad {
+  background: var(--accent-gradient);
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.btn-ruwwad:hover:not(:disabled) {
+  box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Card Styling */
+.card-ruwwad {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.card-ruwwad:hover {
+  border-color: var(--ruwwad-primary);
+  box-shadow: 0 5px 20px var(--glow-color);
+  transform: translateY(-2px);
+}
+
+/* Stats Card */
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+}
+
+/* Loading Animation */
+.loading-dot {
+  background: var(--ruwwad-primary);
+}
+
+/* Suggestion Chip */
+.chip-ruwwad {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.chip-ruwwad:hover {
+  border-color: var(--ruwwad-primary);
+  color: var(--ruwwad-primary);
+  box-shadow: 0 2px 10px var(--glow-color);
+  transform: scale(1.02);
+}
